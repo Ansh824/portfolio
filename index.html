@@ -42,8 +42,6 @@ body {
 ::-webkit-scrollbar { width:3px; }
 ::-webkit-scrollbar-thumb { background: var(--amber); }
 ::-webkit-scrollbar-track { background: var(--bg2); }
-
-/* ── SUBTLE BG GRID ── */
 body::before {
   content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
   background-image:
@@ -55,10 +53,6 @@ body::after {
   content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
   background: radial-gradient(ellipse 60% 30% at 50% 0%, rgba(245,158,11,.055), transparent);
 }
-
-/* ══════════════════════════════
-   TOP NAV
-══════════════════════════════ */
 .top-nav {
   position:fixed; top:0; left:0; right:0; z-index:200;
   height: var(--nav-h);
@@ -88,10 +82,6 @@ body::after {
 }
 .badge-dot { width:5px; height:5px; border-radius:50%; background:var(--amber); box-shadow:0 0 7px var(--amber); animation:dotBlink 2s ease-in-out infinite; }
 @keyframes dotBlink { 0%,100%{opacity:1} 50%{opacity:.3} }
-
-/* ══════════════════════════════
-   SIDEBAR
-══════════════════════════════ */
 .sidebar {
   position:fixed; left:0; top:var(--nav-h); bottom:0; z-index:150;
   width: var(--side-w);
@@ -113,25 +103,15 @@ body::after {
 .slink:hover { border-color:var(--amberborder); background:var(--amberdim); color:var(--white3); }
 .slink.active { border-color:var(--amber); background:var(--amberdim); color:var(--amber); }
 .sdivider { width:44px; height:1px; background:var(--border); margin:5px 0; }
-
-/* ══════════════════════════════
-   MAIN WRAP
-══════════════════════════════ */
 .main {
   margin-left: var(--side-w);
   padding-top: var(--nav-h);
   min-height: 100vh;
   position:relative; z-index:2;
 }
-
-/* ══════════════════════════════
-   PAGES
-══════════════════════════════ */
 .page { display:none; animation: pgIn .3s ease; }
 .page.active { display:block; }
 @keyframes pgIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
-
-/* ── shared page header ── */
 .ph {
   padding: 46px 52px 36px;
   border-bottom: 1px solid var(--border2);
@@ -155,8 +135,6 @@ body::after {
 .ph-title span { color:var(--amber); }
 .ph-desc { font-size:1rem; line-height:1.82; color:var(--white4); font-weight:300; max-width:700px; }
 .pc { padding: 42px 52px; }
-
-/* ── section labels ── */
 .slbl {
   font-family:var(--font-mono); font-size:.5rem; color:var(--amber);
   letter-spacing:3px; margin-bottom:8px;
@@ -169,8 +147,6 @@ body::after {
 }
 .stitle span { color:var(--amber); }
 .srule { width:48px; height:2px; background:linear-gradient(90deg,var(--amber),transparent); margin-bottom:28px; }
-
-/* ── cards ── */
 .card {
   border: 1px solid var(--border2);
   background: var(--panel);
@@ -183,8 +159,6 @@ body::after {
 }
 .card:hover { border-color:var(--amberborder); transform:translateY(-2px); box-shadow:0 10px 32px rgba(0,0,0,.5); }
 .ci { padding:22px; }
-
-/* ── tags ── */
 .tag {
   display:inline-block; padding:3px 9px; margin:3px 3px 0 0;
   font-family:var(--font-mono); font-size:.45rem; letter-spacing:.5px;
@@ -192,8 +166,6 @@ body::after {
   clip-path:polygon(4px 0%,100% 0%,calc(100% - 4px) 100%,0% 100%);
 }
 .tag.wt { border-color:rgba(255,255,255,.14); background:rgba(255,255,255,.04); color:var(--white4); }
-
-/* ── buttons ── */
 .btn {
   font-family:var(--font-hud); font-size:.54rem; font-weight:700; letter-spacing:2px;
   padding:11px 24px; cursor:pointer; transition:all .22s;
@@ -206,8 +178,6 @@ body::after {
 .btn-o:hover { background:var(--amberdim); box-shadow:0 0 16px rgba(245,158,11,.2); }
 .btn-w { background:transparent; color:var(--white3); border:1px solid rgba(255,255,255,.2); }
 .btn-w:hover { border-color:rgba(255,255,255,.4); color:var(--white); }
-
-/* ── timeline ── */
 .timeline { padding-left:24px; position:relative; }
 .timeline::before {
   content:''; position:absolute; left:5px; top:6px; bottom:0; width:1px;
@@ -228,8 +198,6 @@ body::after {
 .tbullets { list-style:none; display:flex; flex-direction:column; gap:6px; }
 .tbullets li { font-size:.88rem; line-height:1.68; color:var(--white4); padding-left:14px; position:relative; font-weight:300; }
 .tbullets li::before { content:'▸'; position:absolute; left:0; color:var(--amber); font-size:.6rem; top:3px; }
-
-/* ── inputs / form ── */
 input, textarea, select {
   background: rgba(255,255,255,.03); border:1px solid var(--border2);
   color:var(--white3); font-family:var(--font-body); font-size:.82rem;
@@ -240,8 +208,6 @@ input::placeholder, textarea::placeholder { color:var(--white5); font-size:.74re
 textarea { resize:none; height:108px; line-height:1.6; }
 select option { background:#111; }
 .flbl { font-family:var(--font-mono); font-size:.49rem; color:var(--white5); letter-spacing:2px; display:block; margin-bottom:4px; }
-
-/* ── footer ── */
 footer {
   border-top:1px solid var(--border2); background:rgba(0,0,0,.98);
   padding:20px 52px; display:flex; align-items:center; justify-content:space-between;
@@ -252,10 +218,6 @@ footer {
 .ft-ticker { overflow:hidden; width:260px; }
 .ticker-inner { display:inline-block; animation:tick 26s linear infinite; white-space:nowrap; }
 @keyframes tick { from{transform:translateX(100%)} to{transform:translateX(-100%)} }
-
-/* ══════════════════════════════
-   HOME PAGE
-══════════════════════════════ */
 .hero-wrap {
   display:grid; grid-template-columns:1fr 300px;
   gap:50px; align-items:center;
@@ -277,8 +239,6 @@ footer {
 .hero-role { font-family:var(--font-mono); font-size:.72rem; color:var(--white4); letter-spacing:1.5px; line-height:1.9; margin-bottom:18px; }
 .hero-bio { font-size:1rem; line-height:1.85; color:var(--white4); font-weight:300; max-width:580px; margin-bottom:26px; }
 .hero-btns { display:flex; gap:10px; flex-wrap:wrap; }
-
-/* orbital viz */
 .hero-viz { position:relative; width:260px; height:260px; flex-shrink:0; }
 .ring { position:absolute; border-radius:50%; border:1px solid; top:50%; left:50%; transform:translate(-50%,-50%); }
 .r1 { width:240px; height:240px; border-color:rgba(245,158,11,.12); animation:rr 22s linear infinite; }
@@ -300,8 +260,6 @@ footer {
   text-align:center; line-height:1.4; animation:cPulse 3s ease-in-out infinite;
 }
 @keyframes cPulse { 0%,100%{box-shadow:0 0 32px rgba(245,158,11,.2)} 50%{box-shadow:0 0 56px rgba(245,158,11,.4)} }
-
-/* stats row */
 .stats-row {
   display:grid; grid-template-columns:repeat(4,1fr); gap:0;
   border-top:1px solid var(--border2); border-bottom:1px solid var(--border2);
@@ -310,8 +268,6 @@ footer {
 .stat:last-child { border-right:none; }
 .stat-n { font-family:var(--font-hud); font-size:2rem; font-weight:900; color:var(--amber); line-height:1; text-shadow:0 0 18px rgba(245,158,11,.3); }
 .stat-l { font-family:var(--font-mono); font-size:.46rem; color:var(--white5); letter-spacing:1.5px; margin-top:5px; }
-
-/* quick nav */
 .qnav { display:grid; grid-template-columns:repeat(6,1fr); gap:0; border-bottom:1px solid var(--border2); }
 .qn {
   padding:18px 10px; text-align:center; border-right:1px solid var(--border2);
@@ -324,8 +280,6 @@ footer {
 .qn-ic { font-size:1.3rem; margin-bottom:6px; }
 .qn-lbl { font-family:var(--font-hud); font-size:.45rem; letter-spacing:2px; color:var(--white5); transition:color .2s; }
 .qn:hover .qn-lbl { color:var(--amber); }
-
-/* about grid on home */
 .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
 .icard { border:1px solid var(--border2); background:var(--panel); padding:13px 16px; position:relative; overflow:hidden; transition:border-color .2s; }
 .icard::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--amber); }
@@ -333,10 +287,6 @@ footer {
 .icard-l { font-family:var(--font-mono); font-size:.44rem; color:var(--white5); letter-spacing:2px; margin-bottom:4px; }
 .icard-v { font-size:.9rem; color:var(--white); font-weight:500; }
 .icard-v a { color:var(--amber); text-decoration:none; }
-
-/* ══════════════════════════════
-   INDUSTRY PAGE
-══════════════════════════════ */
 .exp-card {
   border:1px solid var(--border2); background:var(--panel);
   position:relative; overflow:hidden; margin-bottom:32px;
@@ -358,8 +308,6 @@ footer {
 .exp-bullets { list-style:none; display:flex; flex-direction:column; gap:7px; margin-bottom:14px; }
 .exp-bullets li { font-size:.9rem; line-height:1.7; color:var(--white4); padding-left:15px; position:relative; font-weight:300; }
 .exp-bullets li::before { content:'▸'; position:absolute; left:0; color:var(--amber); font-size:.6rem; top:3px; }
-
-/* metric boxes */
 .mbox {
   padding:14px 16px; border:1px solid var(--border2); background:rgba(255,255,255,.02);
   margin-bottom:10px; position:relative; overflow:hidden;
@@ -368,10 +316,6 @@ footer {
 .mbox-n { font-family:var(--font-hud); font-size:1.8rem; font-weight:900; color:var(--amber); text-shadow:0 0 18px rgba(245,158,11,.35); line-height:1; }
 .mbox-l { font-family:var(--font-mono); font-size:.46rem; color:var(--white5); letter-spacing:1px; margin-top:3px; }
 .mbox-d { font-size:.8rem; color:var(--white4); margin-top:4px; font-weight:300; }
-
-/* ══════════════════════════════
-   RESEARCH PAGE
-══════════════════════════════ */
 .rcard {
   border:1px solid var(--border2); background:var(--panel);
   padding:22px; position:relative; overflow:hidden;
@@ -384,10 +328,6 @@ footer {
 .rcard-title { font-family:var(--font-hud); font-size:.74rem; font-weight:700; color:var(--white); letter-spacing:1px; margin-bottom:3px; }
 .rcard-org { font-family:var(--font-mono); font-size:.5rem; color:var(--white4); letter-spacing:1px; margin-bottom:3px; }
 .rcard-date { font-family:var(--font-mono); font-size:.47rem; color:var(--white5); letter-spacing:1px; margin-bottom:11px; }
-
-/* ══════════════════════════════
-   PROJECTS PAGE
-══════════════════════════════ */
 .proj-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
 .pcard {
   border:1px solid var(--border2); background:var(--panel);
@@ -402,10 +342,6 @@ footer {
 .pcard-date { font-family:var(--font-mono); font-size:.47rem; color:var(--amber); letter-spacing:1px; margin-bottom:9px; }
 .pcard-desc { font-size:.86rem; line-height:1.7; color:var(--white4); font-weight:300; }
 .ptags { display:flex; flex-wrap:wrap; margin-top:11px; }
-
-/* ══════════════════════════════
-   SKILLS PAGE
-══════════════════════════════ */
 .sk-layout { display:grid; grid-template-columns:1fr 300px; gap:36px; align-items:start; }
 .sk-cats { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
 .scat { border:1px solid var(--border2); background:var(--panel); padding:20px; position:relative; overflow:hidden; transition:all .22s; }
@@ -413,7 +349,6 @@ footer {
 .scat:hover { border-color:var(--amberborder); transform:translateY(-2px); }
 .scat-ic { font-size:1.2rem; margin-bottom:8px; }
 .scat-name { font-family:var(--font-hud); font-size:.54rem; font-weight:700; color:var(--amber); letter-spacing:2px; margin-bottom:11px; }
-
 .prof-list { display:flex; flex-direction:column; gap:13px; }
 .prof-item {}
 .prof-row { display:flex; justify-content:space-between; margin-bottom:5px; }
@@ -421,10 +356,6 @@ footer {
 .prof-pct { font-family:var(--font-mono); font-size:.5rem; color:var(--amber); }
 .prof-bar { height:3px; background:rgba(255,255,255,.06); }
 .prof-fill { height:100%; background:linear-gradient(90deg,var(--amber),var(--amber2)); box-shadow:0 0 5px rgba(245,158,11,.35); transition:width 1.1s ease; width:0; }
-
-/* ══════════════════════════════
-   CV / RESUME PAGE
-══════════════════════════════ */
 .cv-layout { display:grid; grid-template-columns:1fr 240px; gap:36px; align-items:start; }
 .cv-sec { margin-bottom:34px; }
 .cv-sec-hdr { font-family:var(--font-hud); font-size:.54rem; font-weight:700; color:var(--amber); letter-spacing:3px; padding-bottom:9px; border-bottom:1px solid var(--border2); margin-bottom:16px; display:flex; align-items:center; gap:7px; }
@@ -436,17 +367,12 @@ footer {
 .cv-item-date { font-family:var(--font-mono); font-size:.46rem; color:var(--amber); letter-spacing:1px; white-space:nowrap; margin-left:10px; border:1px solid var(--amberborder); background:var(--amberdim); padding:2px 7px; }
 .cv-item-org { font-family:var(--font-mono); font-size:.5rem; color:var(--white4); letter-spacing:1px; margin-bottom:5px; }
 .cv-item-desc { font-size:.86rem; line-height:1.7; color:var(--white4); font-weight:300; }
-
 .cv-sidebar-block { border:1px solid var(--border2); background:var(--panel); padding:16px 18px; margin-bottom:12px; position:relative; overflow:hidden; }
 .cv-sidebar-block::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background:var(--amber); }
 .csb-title { font-family:var(--font-hud); font-size:.5rem; font-weight:700; color:var(--amber); letter-spacing:2px; margin-bottom:8px; }
 .csb-val { font-size:.8rem; color:var(--white); font-weight:500; }
 .csb-sub { font-family:var(--font-mono); font-size:.44rem; color:var(--white5); letter-spacing:1px; margin-top:3px; }
 .gpa-big { font-family:var(--font-hud); font-size:2.8rem; font-weight:900; color:var(--amber); text-shadow:0 0 24px rgba(245,158,11,.4); line-height:1; }
-
-/* ══════════════════════════════
-   DOWNLOADS PAGE
-══════════════════════════════ */
 .dl-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:44px; }
 .dl-card {
   border:1px solid var(--border2); background:var(--panel);
@@ -470,8 +396,6 @@ footer {
 }
 .dl-btn:hover { background:var(--amber2); box-shadow:0 0 24px rgba(245,158,11,.4); }
 .dl-btn-ico { font-size:1rem; }
-
-/* preview area */
 .preview-area {
   border:1px solid var(--border2); background:var(--panel);
   padding:28px; position:relative; overflow:hidden;
@@ -483,8 +407,6 @@ footer {
 .ptab { font-family:var(--font-hud); font-size:.5rem; letter-spacing:1.5px; padding:9px 18px; border:none; border-bottom:2px solid transparent; background:transparent; color:var(--white5); cursor:pointer; transition:all .2s; }
 .ptab.on { color:var(--amber); border-bottom-color:var(--amber); }
 .ptab:hover:not(.on) { color:var(--white3); }
-
-/* text preview */
 .doc-preview {
   background: rgba(255,255,255,.02);
   border: 1px solid var(--border2);
@@ -504,10 +426,6 @@ footer {
 .doc-preview .dline { color:var(--white3); margin:2px 0; }
 .doc-preview .dbullet { color:var(--white4); padding-left:12px; }
 .doc-preview .dbullet::before { content:'▸ '; color:var(--amber); }
-
-/* ══════════════════════════════
-   CONTACT PAGE
-══════════════════════════════ */
 .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
 .clink {
   display:flex; align-items:center; gap:14px; padding:15px 18px;
@@ -523,10 +441,6 @@ footer {
 .cl-val { font-size:.9rem; color:var(--white); font-weight:500; }
 .cform { display:flex; flex-direction:column; gap:11px; }
 .frow { display:flex; flex-direction:column; gap:4px; }
-
-/* ══════════════════════════════
-   RESPONSIVE
-══════════════════════════════ */
 @media(max-width:1100px) {
   .exp-body,.hero-wrap,.sk-layout,.cv-layout,.dl-grid,.contact-grid,.about-grid { grid-template-columns:1fr; }
   .hero-viz { display:none; }
@@ -544,7 +458,6 @@ footer {
 </head>
 <body>
 
-<!-- ══ TOP NAV ══ -->
 <nav class="top-nav">
   <div class="nav-brand">
     <div class="nav-hex">AAM</div>
@@ -559,7 +472,6 @@ footer {
   </div>
 </nav>
 
-<!-- ══ SIDEBAR ══ -->
 <aside class="sidebar">
   <div class="slink active" onclick="go('home')"><span class="si">⌂</span>HOME</div>
   <div class="slink" onclick="go('industry')"><span class="si">🏭</span>INDUS</div>
@@ -573,10 +485,9 @@ footer {
   <div class="slink" onclick="go('contact')"><span class="si">✉</span>CNTCT</div>
 </aside>
 
-<!-- ══ MAIN ══ -->
 <div class="main">
 
-<!-- ════════════════ HOME ════════════════ -->
+<!-- HOME -->
 <div class="page active" id="page-home">
   <div class="hero-wrap">
     <div>
@@ -630,7 +541,7 @@ footer {
       <div style="display:flex;flex-direction:column;gap:9px;">
         <div class="icard"><div class="icard-l">CURRENT ROLE</div><div class="icard-v">Graduate Research Assistant — Smart Structures & Dynamical Systems Lab</div></div>
         <div class="icard"><div class="icard-l">FUNDING</div><div class="icard-v">ONR & Sandia National Laboratories</div></div>
-        <div class="icard"><div class="icard-l">EMAIL</div><div class="icard-v"><a href="/cdn-cgi/l/email-protection#7415191d071c06154742443413150011171c5a111001"><span class="__cf_email__" data-cfemail="ef8e82869c879d8edcd9dfaf888e9b8a8c87c18a8b9a">[email&#160;protected]</span></a></div></div>
+        <div class="icard"><div class="icard-l">EMAIL</div><div class="icard-v"><a href="mailto:amishra360@gatech.edu">amishra360@gatech.edu</a></div></div>
         <div class="icard"><div class="icard-l">LINKEDIN</div><div class="icard-v"><a href="https://www.linkedin.com/in/ansh-mishra-92172418a/" target="_blank">ansh-mishra-92172418a</a></div></div>
         <div class="icard"><div class="icard-l">PHONE</div><div class="icard-v">602-388-9723</div></div>
         <div class="icard"><div class="icard-l">LOCATION</div><div class="icard-v">Atlanta, Georgia 30309</div></div>
@@ -639,7 +550,7 @@ footer {
   </div>
 </div>
 
-<!-- ════════════════ INDUSTRY ════════════════ -->
+<!-- INDUSTRY -->
 <div class="page" id="page-industry">
   <div class="ph">
     <div class="ph-tag">02 · INDUSTRY EXPERIENCE</div>
@@ -647,8 +558,6 @@ footer {
     <p class="ph-desc">Two high-impact engineering internships applying vibrations, acoustics, and thermal engineering to real aerospace and industrial challenges — delivering measurable, production-level results.</p>
   </div>
   <div class="pc">
-
-    <!-- GULFSTREAM -->
     <div class="slbl">FLAGSHIP INTERNSHIP</div>
     <h2 class="stitle">Gulfstream <span>Aerospace</span></h2>
     <div class="srule"></div>
@@ -678,21 +587,9 @@ footer {
             </div>
           </div>
           <div>
-            <div class="mbox">
-              <div class="mbox-n">99%</div>
-              <div class="mbox-l">EFFICIENCY IMPROVEMENT</div>
-              <div class="mbox-d">2 hours → 30 seconds data processing via MATLAB automation</div>
-            </div>
-            <div class="mbox">
-              <div class="mbox-n">6+</div>
-              <div class="mbox-l">ACOUSTIC TEST FACILITIES</div>
-              <div class="mbox-d">Anechoic, reverb, impedance, PU probe, shaker, in-flight surveys</div>
-            </div>
-            <div class="mbox">
-              <div class="mbox-n" style="font-size:1rem;padding-top:4px;">FLIGHT CERT</div>
-              <div class="mbox-l">FLY-OVER NOISE CERTIFICATION</div>
-              <div class="mbox-d">Community noise compliance & FAA certification data analysis</div>
-            </div>
+            <div class="mbox"><div class="mbox-n">99%</div><div class="mbox-l">EFFICIENCY IMPROVEMENT</div><div class="mbox-d">2 hours → 30 seconds data processing via MATLAB automation</div></div>
+            <div class="mbox"><div class="mbox-n">6+</div><div class="mbox-l">ACOUSTIC TEST FACILITIES</div><div class="mbox-d">Anechoic, reverb, impedance, PU probe, shaker, in-flight surveys</div></div>
+            <div class="mbox"><div class="mbox-n" style="font-size:1rem;padding-top:4px;">FLIGHT CERT</div><div class="mbox-l">FLY-OVER NOISE CERTIFICATION</div><div class="mbox-d">Community noise compliance & FAA certification data analysis</div></div>
             <div style="margin-top:14px;padding:12px 14px;border:1px solid var(--border2);background:rgba(255,255,255,.02);">
               <div style="font-family:var(--font-mono);font-size:.46rem;color:var(--white5);letter-spacing:1px;margin-bottom:6px;">DOMAIN AREAS</div>
               <div style="font-size:.75rem;color:var(--white4);line-height:1.8;font-weight:300;">Cabin Acoustics · Flight Sciences · NVH · Data Automation · Material Qualification · Tonal Analysis</div>
@@ -702,7 +599,6 @@ footer {
       </div>
     </div>
 
-    <!-- SENSATA -->
     <div class="slbl" style="margin-top:40px;">ENGINEERING INTERNSHIP</div>
     <h2 class="stitle">Sensata <span>Technologies</span></h2>
     <div class="srule"></div>
@@ -731,21 +627,9 @@ footer {
             </div>
           </div>
           <div>
-            <div class="mbox">
-              <div class="mbox-n" style="font-size:1rem;padding-top:4px;">HVDU</div>
-              <div class="mbox-l">THERMAL CHARACTERIZATION</div>
-              <div class="mbox-d">Far-field sensor correlation with internal component temps — non-invasive monitoring</div>
-            </div>
-            <div class="mbox">
-              <div class="mbox-n" style="font-size:1rem;padding-top:4px;">FULL LOOP</div>
-              <div class="mbox-l">MODEL VALIDATION PIPELINE</div>
-              <div class="mbox-d">MATLAB analytical model → Ansys simulation → physical test confirmation</div>
-            </div>
-            <div class="mbox">
-              <div class="mbox-n" style="font-size:1rem;padding-top:4px;">2 TOOLS</div>
-              <div class="mbox-l">SIMULATION PLATFORMS</div>
-              <div class="mbox-d">MATLAB + Ansys for coupled analytical and FEA model development</div>
-            </div>
+            <div class="mbox"><div class="mbox-n" style="font-size:1rem;padding-top:4px;">HVDU</div><div class="mbox-l">THERMAL CHARACTERIZATION</div><div class="mbox-d">Far-field sensor correlation with internal component temps — non-invasive monitoring</div></div>
+            <div class="mbox"><div class="mbox-n" style="font-size:1rem;padding-top:4px;">FULL LOOP</div><div class="mbox-l">MODEL VALIDATION PIPELINE</div><div class="mbox-d">MATLAB analytical model → Ansys simulation → physical test confirmation</div></div>
+            <div class="mbox"><div class="mbox-n" style="font-size:1rem;padding-top:4px;">2 TOOLS</div><div class="mbox-l">SIMULATION PLATFORMS</div><div class="mbox-d">MATLAB + Ansys for coupled analytical and FEA model development</div></div>
             <div style="margin-top:14px;padding:12px 14px;border:1px solid var(--border2);background:rgba(255,255,255,.02);">
               <div style="font-family:var(--font-mono);font-size:.46rem;color:var(--white5);letter-spacing:1px;margin-bottom:6px;">KEY SKILLS APPLIED</div>
               <div style="font-size:.75rem;color:var(--white4);line-height:1.8;font-weight:300;">Thermal Analysis · Vibration Testing · Shock Testing · Analytical Modeling · FEA · Technical Reporting</div>
@@ -754,11 +638,10 @@ footer {
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
-<!-- ════════════════ RESEARCH ════════════════ -->
+<!-- RESEARCH -->
 <div class="page" id="page-research">
   <div class="ph">
     <div class="ph-tag">03 · RESEARCH EXPERIENCE</div>
@@ -766,21 +649,11 @@ footer {
     <p class="ph-desc">Six research positions across Georgia Tech, Purdue, and ASU — spanning structural dynamics, naval acoustics, combustion, aeromechanics AI, and microelectronics. Funded by ONR and Sandia National Laboratories.</p>
   </div>
   <div class="pc">
-
-    <!-- Funding badges -->
     <div style="display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;">
-      <div style="padding:9px 16px;border:1px solid var(--amberborder);background:var(--amberdim);display:flex;align-items:center;gap:9px;">
-        <span>🏛️</span><div><div style="font-family:var(--font-hud);font-size:.46rem;color:var(--amber);letter-spacing:2px;">ONR FUNDED</div><div style="font-size:.76rem;color:var(--white);">Office of Naval Research</div></div>
-      </div>
-      <div style="padding:9px 16px;border:1px solid var(--amberborder);background:var(--amberdim);display:flex;align-items:center;gap:9px;">
-        <span>⚛️</span><div><div style="font-family:var(--font-hud);font-size:.46rem;color:var(--amber);letter-spacing:2px;">SANDIA FUNDED</div><div style="font-size:.76rem;color:var(--white);">Sandia National Laboratories</div></div>
-      </div>
-      <div style="padding:9px 16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);display:flex;align-items:center;gap:9px;">
-        <span>🏆</span><div><div style="font-family:var(--font-hud);font-size:.46rem;color:var(--white4);letter-spacing:2px;">AWARD</div><div style="font-size:.76rem;color:var(--white);">Exemplary First-Time Researcher · Purdue</div></div>
-      </div>
-      <div style="padding:9px 16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);display:flex;align-items:center;gap:9px;">
-        <span>📑</span><div><div style="font-family:var(--font-hud);font-size:.46rem;color:var(--white4);letter-spacing:2px;">PUBLICATION</div><div style="font-size:.76rem;color:var(--white);">SPIE SSNE 2026 · SES Honorary Mention</div></div>
-      </div>
+      <div style="padding:9px 16px;border:1px solid var(--amberborder);background:var(--amberdim);display:flex;align-items:center;gap:9px;"><span>🏛️</span><div><div style="font-family:var(--font-hud);font-size:.46rem;color:var(--amber);letter-spacing:2px;">ONR FUNDED</div><div style="font-size:.76rem;color:var(--white);">Office of Naval Research</div></div></div>
+      <div style="padding:9px 16px;border:1px solid var(--amberborder);background:var(--amberdim);display:flex;align-items:center;gap:9px;"><span>⚛️</span><div><div style="font-family:var(--font-hud);font-size:.46rem;color:var(--amber);letter-spacing:2px;">SANDIA FUNDED</div><div style="font-size:.76rem;color:var(--white);">Sandia National Laboratories</div></div></div>
+      <div style="padding:9px 16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);display:flex;align-items:center;gap:9px;"><span>🏆</span><div><div style="font-family:var(--font-hud);font-size:.46rem;color:var(--white4);letter-spacing:2px;">AWARD</div><div style="font-size:.76rem;color:var(--white);">Exemplary First-Time Researcher · Purdue</div></div></div>
+      <div style="padding:9px 16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);display:flex;align-items:center;gap:9px;"><span>📑</span><div><div style="font-family:var(--font-hud);font-size:.46rem;color:var(--white4);letter-spacing:2px;">PUBLICATION</div><div style="font-size:.76rem;color:var(--white);">SPIE SSNE 2026 · SES Honorary Mention</div></div></div>
     </div>
 
     <div class="rcard">
@@ -871,11 +744,10 @@ footer {
       </ul>
       <div style="margin-top:11px;"><span class="tag">HRI</span><span class="tag">Eye Tracking</span><span class="tag wt">Data Analysis</span><span class="tag wt">Statistical Methods</span></div>
     </div>
-
   </div>
 </div>
 
-<!-- ════════════════ PROJECTS ════════════════ -->
+<!-- PROJECTS -->
 <div class="page" id="page-projects">
   <div class="ph">
     <div class="ph-tag">04 · PROJECT EXPERIENCE</div>
@@ -884,7 +756,6 @@ footer {
   </div>
   <div class="pc">
     <div class="proj-grid">
-
       <div class="pcard">
         <div class="pcard-ico">🔊</div>
         <div class="pcard-title">Dynamic Spatial Ultrasound Amplitude Modulator</div>
@@ -892,7 +763,6 @@ footer {
         <p class="pcard-desc">Simulated a dynamic Spatial Amplitude Modulator in MATLAB using a binary amplitude acoustic hologram and FFT-based wave propagation to reconstruct ultrasound fields for amplitude modulation.</p>
         <div class="ptags"><span class="tag">MATLAB</span><span class="tag">FFT</span><span class="tag wt">Acoustics</span><span class="tag wt">Holography</span></div>
       </div>
-
       <div class="pcard">
         <div class="pcard-ico">🤖</div>
         <div class="pcard-title">Automated End Effector — Sound Intensity Measurements</div>
@@ -900,7 +770,6 @@ footer {
         <p class="pcard-desc">Designed, developed, and tested an adaptive robotic end effector to automate Sound Intensity Measurements — reducing manual intervention and improving process efficiency by 90%.</p>
         <div class="ptags"><span class="tag">Robotics</span><span class="tag">Acoustics</span><span class="tag wt">Controls</span><span class="tag wt">Sensing</span></div>
       </div>
-
       <div class="pcard">
         <div class="pcard-ico">📐</div>
         <div class="pcard-title">Dynamic System Model — Acoustic Isolation Panels</div>
@@ -908,7 +777,6 @@ footer {
         <p class="pcard-desc">Created a dynamic system model for acoustic isolation panels characterizing sound absorption and transmission loss across broadband frequencies and amplitudes. MATLAB and Simulink.</p>
         <div class="ptags"><span class="tag">MATLAB</span><span class="tag">Simulink</span><span class="tag wt">Transmission Loss</span><span class="tag wt">Broadband</span></div>
       </div>
-
       <div class="pcard">
         <div class="pcard-ico">🏎️</div>
         <div class="pcard-title">The Mystery Machine Robot</div>
@@ -916,7 +784,6 @@ footer {
         <p class="pcard-desc">Designed, built, and competed with an autonomous multitasking robot using motors, gears, pneumatics, and solenoid-assisted mechanisms. Used 3D printing, laser cutting, SolidWorks, and Arduino.</p>
         <div class="ptags"><span class="tag">Robotics</span><span class="tag">Arduino</span><span class="tag wt">SolidWorks</span><span class="tag wt">Pneumatics</span></div>
       </div>
-
       <div class="pcard">
         <div class="pcard-ico">✈️</div>
         <div class="pcard-title">Avalanche Mitigation & Response Drone</div>
@@ -924,7 +791,6 @@ footer {
         <p class="pcard-desc">Designed an avalanche mitigation and response drone in SolidWorks — including the explosive deployment system release mechanism and structural components, as part of a 4-person team.</p>
         <div class="ptags"><span class="tag">SolidWorks</span><span class="tag">Mechanical Design</span><span class="tag wt">Systems Engineering</span></div>
       </div>
-
       <div class="pcard">
         <div class="pcard-ico">🚀</div>
         <div class="pcard-title">Runway Overrun Prevention System (ROPS)</div>
@@ -932,12 +798,11 @@ footer {
         <p class="pcard-desc">Designed, manufactured, and developed an EMAS/ROPS instrument to address runway overruns. Developed low-cost arrestor bed blocks validated with a Universal Testing Machine for strength and energy absorption.</p>
         <div class="ptags"><span class="tag">Arduino</span><span class="tag">Material Science</span><span class="tag wt">Aviation Safety</span><span class="tag wt">Prototyping</span></div>
       </div>
-
     </div>
   </div>
 </div>
 
-<!-- ════════════════ SKILLS ════════════════ -->
+<!-- SKILLS -->
 <div class="page" id="page-skills">
   <div class="ph">
     <div class="ph-tag">05 · TECHNICAL SKILLS</div>
@@ -972,7 +837,7 @@ footer {
   </div>
 </div>
 
-<!-- ════════════════ CV PAGE ════════════════ -->
+<!-- CV -->
 <div class="page" id="page-cv">
   <div class="ph">
     <div class="ph-tag">06 · CURRICULUM VITAE</div>
@@ -990,7 +855,6 @@ footer {
             <div class="cv-item-desc">Specializations in Vibrations, Structural Dynamics, Acoustics, CAE, and Heat Transfer. Research funded by ONR and Sandia National Laboratories.</div>
           </div>
         </div>
-
         <div class="cv-sec">
           <div class="cv-sec-hdr">INDUSTRY EXPERIENCE</div>
           <div class="cv-item">
@@ -1009,7 +873,6 @@ footer {
             <div class="cv-item-desc">Designed and tested a portable horizontal static test pad using Fusion 360 for solid propellant rocket motor testing. Eagle IDE circuit design.</div>
           </div>
         </div>
-
         <div class="cv-sec">
           <div class="cv-sec-hdr">RESEARCH EXPERIENCE</div>
           <div class="cv-item">
@@ -1048,7 +911,6 @@ footer {
             <div class="cv-item-desc">Human-robot interaction trust studies via Roblox simulations. Multi-modal physiological data collection: Tobii Pro eye tracking, ECG, pulse, stress monitoring with automated Excel pipelines.</div>
           </div>
         </div>
-
         <div class="cv-sec">
           <div class="cv-sec-hdr">PUBLICATIONS & PRESENTATIONS</div>
           <div class="cv-item" style="border:none;padding:0;margin:0;">
@@ -1062,7 +924,6 @@ footer {
             </ul>
           </div>
         </div>
-
         <div class="cv-sec">
           <div class="cv-sec-hdr">PROFESSIONAL MEMBERSHIPS & ENGAGEMENTS</div>
           <div class="cv-item" style="border:none;padding:0;margin:0;">
@@ -1076,8 +937,6 @@ footer {
           </div>
         </div>
       </div>
-
-      <!-- Sidebar -->
       <div>
         <div class="cv-sidebar-block"><div class="csb-title">CURRENT ROLE</div><div class="csb-val">PhD Researcher</div><div class="csb-sub">GEORGIA TECH · SMART STRUCTURES LAB</div></div>
         <div class="cv-sidebar-block"><div class="csb-title">AWARD</div><div class="csb-val">Exemplary First-Time Researcher</div><div class="csb-sub">PURDUE SURF · 2023</div></div>
@@ -1093,7 +952,7 @@ footer {
   </div>
 </div>
 
-<!-- ════════════════ DOWNLOADS ════════════════ -->
+<!-- DOWNLOADS -->
 <div class="page" id="page-downloads">
   <div class="ph">
     <div class="ph-tag">07 · DOCUMENTS</div>
@@ -1102,8 +961,6 @@ footer {
   </div>
   <div class="pc">
     <div class="dl-grid">
-
-      <!-- RESUME -->
       <div class="dl-card">
         <div class="dl-icon">📄</div>
         <div class="dl-title">RESUME</div>
@@ -1116,8 +973,6 @@ footer {
         </div>
         <a href="#" onclick="downloadResume(event,'resume')" class="dl-btn"><span class="dl-btn-ico">⬇</span> DOWNLOAD RESUME</a>
       </div>
-
-      <!-- CV -->
       <div class="dl-card">
         <div class="dl-icon">📋</div>
         <div class="dl-title">CURRICULUM VITAE</div>
@@ -1131,8 +986,6 @@ footer {
         <a href="#" onclick="downloadResume(event,'cv')" class="dl-btn"><span class="dl-btn-ico">⬇</span> DOWNLOAD FULL CV</a>
       </div>
     </div>
-
-    <!-- Document preview -->
     <div class="preview-area">
       <div class="preview-title">DOCUMENT PREVIEW</div>
       <div class="preview-tabs">
@@ -1141,85 +994,56 @@ footer {
       </div>
       <div id="preview-resume" class="doc-preview">
         <div class="dh">ANSH ATUL MISHRA</div>
-        <div class="dline">Atlanta, Georgia, 30309 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2b4a46425843594a181d1b6b4c4a5f4e4843054e4f5e">[email&#160;protected]</a> · 602-388-9723</div>
+        <div class="dline">Atlanta, Georgia, 30309 · amishra360@gatech.edu · 602-388-9723</div>
         <div class="dline">LinkedIn: linkedin.com/in/ansh-mishra-92172418a/</div>
-
         <div class="dh">EDUCATION</div>
         <div class="dline">Georgia Institute of Technology, Atlanta, Georgia</div>
         <div class="dline">BSMS / PhD Mechanical Engineering · Jan 2022 – Current</div>
-
         <div class="dh">INDUSTRY EXPERIENCE</div>
         <div class="dline">Mechanical Engineering Intern · Sensata Technologies · Attleboro, MA · June 2025 – Aug 2025</div>
         <div class="dbullet">Designed and executed experimental setups to correlate far-field sensor data with internal component temperatures in a HVDU.</div>
         <div class="dbullet">Conducted vibration and mechanical shock testing for thermal performance evaluations of TIMs.</div>
         <div class="dbullet">Developed and validated theoretical/analytical models using MATLAB and Ansys.</div>
-        <div class="dbullet">Collaborated with cross-functional teams during system-level design reviews.</div>
         <div class="dline" style="margin-top:8px;">Innovation Engineering & Flight Intern · Gulfstream Aerospace · Savannah, GA · Aug 2024 – Dec 2024</div>
         <div class="dbullet">Conducted in-flight cabin noise surveys and created noise level reports for customer use.</div>
         <div class="dbullet">Developed MATLAB automation reducing data processing from ~2 hours to 30 seconds (99% improvement).</div>
         <div class="dbullet">Analyzed acoustic data using ArtemiS Suite for engine tonal and cabin noise analysis.</div>
-        <div class="dbullet">Used reverberation chamber, anechoic chamber, PU probe, shaker testing, and impedance tube facilities.</div>
-
         <div class="dh">RESEARCH EXPERIENCE</div>
         <div class="dline">Graduate Research Assistant · Smart Structures & Dynamical Systems Lab · Aug 2025 – Current</div>
         <div class="dbullet">Developing ultrasonic communication module for bioinspired robotic fish (ONR & Sandia funded).</div>
         <div class="dbullet">Vibration analysis using SLDV on piezoelectric-actuated tail fin structures.</div>
-        <div class="dline" style="margin-top:8px;">Undergraduate Research Assistant · Combustion Lab · Aug 2023 – May 2025</div>
-        <div class="dbullet">Investigated longitudinal acoustic modes on combustion stability in scaled can combustors.</div>
-        <div class="dline" style="margin-top:8px;">Naval Underwater Acoustics Lab · Jan 2023 – Jul 2025</div>
-        <div class="dbullet">Designed acoustic ID tags for AUV navigation and underwater charging station identification.</div>
-
         <div class="dh">SKILLS</div>
         <div class="dline">Programming: MATLAB, Python, LabVIEW, Simulink, Version Control, DevOps, Eagle IDE</div>
-        <div class="dline">Simulation: Ansys, COMSOL, Harmonic Response, Modal Analysis, ArtemiS Suite 15.7, SolidWorks</div>
+        <div class="dline">Simulation: Ansys, COMSOL, Harmonic Response, Modal Analysis, ArtemiS Suite 15.7</div>
         <div class="dline">Design: SolidWorks, Fusion 360, CATIA, Solid Edge</div>
-        <div class="dline">Testing & DAQ: SLDV, Shaker Testing, PU Probe, Microflown DAQ, SQuadriga, Vibration, Acoustics</div>
+        <div class="dline">Testing & DAQ: SLDV, Shaker Testing, PU Probe, Microflown DAQ, SQuadriga</div>
       </div>
       <div id="preview-cv" class="doc-preview" style="display:none;">
         <div class="dh">ANSH ATUL MISHRA — CURRICULUM VITAE</div>
-        <div class="dline">Atlanta, Georgia, 30309 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5b4b8bca6bda7b4e6e3e595b2b4a1b0b6bdfbb0b1a0">[email&#160;protected]</a> · 602-388-9723</div>
-
+        <div class="dline">Atlanta, Georgia, 30309 · amishra360@gatech.edu · 602-388-9723</div>
         <div class="dh">EDUCATION</div>
         <div class="dline">Georgia Institute of Technology — BSMS / PhD Mechanical Engineering · Jan 2022–Present</div>
-
         <div class="dh">INDUSTRY EXPERIENCE</div>
         <div class="dline">Mechanical Engineering Intern · Sensata Technologies · May–Aug 2025</div>
         <div class="dline">Innovation Engineering & Flight Intern · Gulfstream Aerospace · Aug–Dec 2024</div>
         <div class="dline">Mechanical Design Intern · Space Technology & Aeronautical Rocketry · Jul–Aug 2022</div>
-
         <div class="dh">RESEARCH EXPERIENCE</div>
         <div class="dline">Graduate Research Assistant · Smart Structures & Dynamical Systems Lab (ONR/Sandia) · Aug 2025–Present</div>
         <div class="dline">Undergraduate Research Assistant · Combustion Lab, Georgia Tech · Aug 2023–May 2025</div>
         <div class="dline">CEREAL Research Lab (VLRCOE) · Georgia Tech · Jan–Jun 2025</div>
         <div class="dline">Naval Underwater Acoustics Lab · Georgia Tech · Jan 2023–Jul 2025</div>
-        <div class="dline">VIP — 2D Heterostructure Membranes · Georgia Tech · Jan–May 2024</div>
         <div class="dline">Purdue SURF Fellowship (Exemplary First-Time Researcher) · May–Aug 2023</div>
-        <div class="dline">HRI Research · Arizona State University · Aug–Dec 2022</div>
-
         <div class="dh">PUBLICATIONS & PRESENTATIONS</div>
         <div class="dbullet">Multi-DOF Piezoelectric Robotic Fish — SPIE SSNE 2026 Conference</div>
         <div class="dbullet">Multi-DOF Piezoelectric Robotic Fish — SES Conference, Honorary Mention</div>
         <div class="dbullet">Passive Acoustic ID Tags Lake Experiment — Technical Report & In-Progress Paper</div>
-        <div class="dbullet">Vapor Selective Membranes for Air Dehumidification — Poster & Technical Report</div>
-        <div class="dbullet">Origami-Inspired Locomotive Robot — Poster Presentation</div>
         <div class="dbullet">Mishra & Mohite (2020) — Cold Gas Propulsion System Study · IRJET</div>
-
         <div class="dh">HONORS & AWARDS</div>
         <div class="dbullet">Exemplary First-Time Researcher · Purdue SURF 2023</div>
         <div class="dbullet">Faculty Honors · Georgia Institute of Technology</div>
-        <div class="dbullet">New American Scholar Award · Arizona State University</div>
-        <div class="dbullet">Kalam Ratna Award</div>
         <div class="dbullet">ISRO Cyberspace Competition — All India Rank 51</div>
-        <div class="dbullet">National Science Olympiad — Bronze Medal</div>
-        <div class="dbullet">Most Innovative & Creative Project Award — Martian Health Monitoring Rover</div>
-
         <div class="dh">PROFESSIONAL MEMBERSHIPS</div>
-        <div class="dline">INCE · ASA · ASME · AIAA</div>
-        <div class="dline">Mentee — Boeing Forming Leaders in Technology Program</div>
-        <div class="dline">Mentee — Institute of Noise Control Engineering</div>
-
-        <div class="dh">CERTIFICATIONS</div>
-        <div class="dline">Scanned Electron Microscopy Imaging Training · Advanced Chamber Program · RCR · STK Level 1</div>
+        <div class="dline">INCE · ASA · ASME · AIAA · Boeing Forming Leaders in Technology Program</div>
       </div>
       <div style="display:flex;gap:10px;margin-top:14px;">
         <span class="btn btn-a" onclick="downloadResume(event,'resume')" style="cursor:pointer;">⬇ DOWNLOAD RESUME</span>
@@ -1229,7 +1053,7 @@ footer {
   </div>
 </div>
 
-<!-- ════════════════ CONTACT ════════════════ -->
+<!-- CONTACT -->
 <div class="page" id="page-contact">
   <div class="ph">
     <div class="ph-tag">08 · CONTACT</div>
@@ -1239,8 +1063,8 @@ footer {
   <div class="pc">
     <div class="contact-grid">
       <div>
-        <p style="font-size:.88rem;line-height:1.85;color:var(--white4);font-weight:300;margin-bottom:18px;">I'm actively seeking <strong style="color:var(--white2)">industry roles</strong> in vibrations, dynamics, acoustics, CAE, and heat transfer — where I can apply deep technical expertise developed through federally funded research and real aerospace internships. I also welcome research collaborations and speaking opportunities.</p>
-        <a href="/cdn-cgi/l/email-protection#84e5e9edf7ecf6e5b7b2b4c4e3e5f0e1e7ecaae1e0f1" class="clink"><span class="cl-ico">📧</span><div><div class="cl-lbl">EMAIL</div><div class="cl-val"><span class="__cf_email__" data-cfemail="e0818d8993889281d3d6d0a0878194858388ce858495">[email&#160;protected]</span></div></div></a>
+        <p style="font-size:.88rem;line-height:1.85;color:var(--white4);font-weight:300;margin-bottom:18px;">I'm actively seeking <strong style="color:var(--white2)">industry roles</strong> in vibrations, dynamics, acoustics, CAE, and heat transfer — where I can apply deep technical expertise developed through federally funded research and real aerospace internships.</p>
+        <a href="mailto:amishra360@gatech.edu" class="clink"><span class="cl-ico">📧</span><div><div class="cl-lbl">EMAIL</div><div class="cl-val">amishra360@gatech.edu</div></div></a>
         <a href="https://www.linkedin.com/in/ansh-mishra-92172418a/" target="_blank" class="clink"><span class="cl-ico">🔗</span><div><div class="cl-lbl">LINKEDIN</div><div class="cl-val">ansh-mishra-92172418a</div></div></a>
         <a href="tel:6023889723" class="clink"><span class="cl-ico">📞</span><div><div class="cl-lbl">PHONE</div><div class="cl-val">602-388-9723</div></div></a>
         <div class="clink" style="cursor:default;"><span class="cl-ico">📍</span><div><div class="cl-lbl">LOCATION</div><div class="cl-val">Atlanta, Georgia 30309</div></div></div>
@@ -1259,7 +1083,6 @@ footer {
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="ft-brand">ANSH ATUL MISHRA</div>
   <div class="ft-ticker"><span class="ticker-inner">◆ GEORGIA TECH · PhD RESEARCHER · VIBRATIONS · DYNAMICS · ACOUSTICS · CAE · HEAT TRANSFER · ONR · SANDIA · GULFSTREAM · SENSATA · INCE · ASA · ASME · AIAA ◆</span></div>
@@ -1268,28 +1091,21 @@ footer {
 
 </div><!-- /main -->
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ── PAGE ROUTING ──
 const pages = ['home','industry','research','projects','skills','cv','downloads','contact'];
-const links  = document.querySelectorAll('.slink');
 
 function go(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  links.forEach(l => l.classList.remove('active'));
-  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.slink').forEach(l => l.classList.remove('active'));
+  const page = document.getElementById('page-' + id);
+  if (page) page.classList.add('active');
   const i = pages.indexOf(id);
-  if(i > -1) links[i].classList.add('active');
-  if(id === 'skills') setTimeout(animateBars, 200);
-  window.scrollTo({ top:0, behavior:'smooth' });
+  const links = document.querySelectorAll('.slink');
+  if (i > -1 && links[i]) links[i].classList.add('active');
+  if (id === 'skills') setTimeout(animateBars, 200);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-// re-bind slinks in order
-links.forEach((l, i) => { l.onclick = () => go(pages[i]); });
-
-// quick-nav & stat tiles
-document.querySelectorAll('.qn').forEach(q => {
-  q.addEventListener('click', () => go(q.getAttribute('onclick').match(/'(\w+)'/)[1]));
-});
 
 // ── PROF BARS ──
 function animateBars() {
@@ -1304,11 +1120,17 @@ function switchPreview(which, btn) {
   document.getElementById('preview-cv').style.display     = which === 'cv'     ? 'block' : 'none';
 }
 
-// ── DOWNLOAD ──
-// Since the actual PDF files are user uploads and can't be bundled into HTML,
-// we generate a clean text version as a fallback download, and show a helpful message.
-function downloadResume(e, which) {
+// ── CONTACT FORM ──
+function handleForm(e) {
   e.preventDefault();
+  const ok = document.getElementById('form-ok');
+  if (ok) { ok.style.display = 'block'; }
+  e.target.reset();
+}
+
+// ── DOWNLOAD ──
+function downloadResume(e, which) {
+  if (e && e.preventDefault) e.preventDefault();
   const isCV = which === 'cv';
   const filename = isCV ? 'Ansh_Mishra_CV.txt' : 'Ansh_Mishra_Resume.txt';
   const content = isCV ? getCVText() : getResumeText();
@@ -1317,11 +1139,9 @@ function downloadResume(e, which) {
   const a    = document.createElement('a');
   a.href = url; a.download = filename; a.click();
   URL.revokeObjectURL(url);
-
-  // Show tip to replace with real PDF
   const note = document.createElement('div');
   note.style.cssText = 'position:fixed;bottom:20px;right:20px;z-index:999;padding:14px 20px;background:#111;border:1px solid rgba(245,158,11,.4);font-family:Share Tech Mono,monospace;font-size:.6rem;color:#f59e0b;letter-spacing:1px;max-width:320px;line-height:1.7;';
-  note.innerHTML = '◆ TEXT PREVIEW DOWNLOADED<br><span style="color:#94a3b8">To attach your actual PDF, replace the download links with direct file paths. See instructions below the download cards.</span>';
+  note.innerHTML = '◆ TEXT PREVIEW DOWNLOADED<br><span style="color:#94a3b8">To attach your actual PDF, replace the download links with direct file paths.</span>';
   document.body.appendChild(note);
   setTimeout(() => note.remove(), 6000);
 }
@@ -1333,87 +1153,83 @@ LinkedIn: https://www.linkedin.com/in/ansh-mishra-92172418a/
 
 EDUCATION
 Georgia Institute of Technology, Atlanta, Georgia
-BSMS / PhD Mechanical Engineering | Jan 2022 – Current
+BSMS / PhD Mechanical Engineering | Jan 2022 - Current
 
 INDUSTRY EXPERIENCE
-Mechanical Engineering Intern | Sensata Technologies | Attleboro, MA | June 2025 – Aug 2025
-• Designed and executed experimental setups to correlate far-field sensor data with internal component temperatures in a HVDU.
-• Conducted vibration and mechanical shock testing for thermal performance evaluations of TIMs.
-• Developed and validated theoretical/analytical models using MATLAB and Ansys.
-• Collaborated with cross-functional teams during system-level design reviews.
+Mechanical Engineering Intern | Sensata Technologies | Attleboro, MA | June 2025 - Aug 2025
+- Designed and executed experimental setups to correlate far-field sensor data with internal component temperatures in a HVDU.
+- Conducted vibration and mechanical shock testing for thermal performance evaluations of TIMs.
+- Developed and validated theoretical/analytical models using MATLAB and Ansys.
 
-Innovation Engineering & Flight Intern | Gulfstream Aerospace | Savannah, GA | Aug 2024 – Dec 2024
-• Conducted in-flight cabin noise surveys and created noise level reports for customer use.
-• Developed MATLAB automation reducing data processing from ~2 hours to 30 seconds (99% improvement).
-• Analyzed acoustic data using ArtemiS Suite for engine tonal and cabin noise analysis.
-• Utilized reverberation chamber, anechoic chamber, PU probe, shaker testing, and impedance tube facilities.
+Innovation Engineering & Flight Intern | Gulfstream Aerospace | Savannah, GA | Aug 2024 - Dec 2024
+- Conducted in-flight cabin noise surveys and created noise level reports for customer use.
+- Developed MATLAB automation reducing data processing from 2 hours to 30 seconds (99% improvement).
+- Analyzed acoustic data using ArtemiS Suite for engine tonal and cabin noise analysis.
+- Utilized reverberation chamber, anechoic chamber, PU probe, shaker testing, and impedance tube facilities.
 
 RESEARCH EXPERIENCE
-Graduate Research Assistant | Smart Structures & Dynamical Systems Lab (ONR & Sandia) | Aug 2025–Present
-• Developing ultrasonic communication module for bioinspired robotic fish.
-• Vibration analysis using SLDV on piezoelectric-actuated tail fin structures.
+Graduate Research Assistant | Smart Structures & Dynamical Systems Lab (ONR & Sandia) | Aug 2025-Present
+- Developing ultrasonic communication module for bioinspired robotic fish.
+- Vibration analysis using SLDV on piezoelectric-actuated tail fin structures.
 
-Undergraduate Research Assistant | Combustion Lab, Georgia Tech | Aug 2023 – May 2025
-• Investigated longitudinal acoustic modes on combustion stability in scaled can combustors.
+Undergraduate Research Assistant | Combustion Lab, Georgia Tech | Aug 2023 - May 2025
+- Investigated longitudinal acoustic modes on combustion stability in scaled can combustors.
 
-Naval Underwater Acoustics Lab | Georgia Tech | Jan 2023 – Jul 2025
-• Designed acoustic ID tags for AUV navigation and underwater charging station identification.
-
-CEREAL Research Lab (VLRCOE) | Georgia Tech | Jan 2025 – Jun 2025
-• AI/ML tools for aeromechanics predictions of next-generation vertical lift aircrafts.
-
-Purdue SURF Fellowship | Purdue University | May 2023 – Aug 2023
-• Exemplary First-Time Researcher Award.
+Naval Underwater Acoustics Lab | Georgia Tech | Jan 2023 - Jul 2025
+- Designed acoustic ID tags for AUV navigation and underwater charging station identification.
 
 SKILLS
 Programming: MATLAB, Python, LabVIEW, Simulink, Version Control, DevOps, Eagle IDE
-Simulation: Ansys, COMSOL, Harmonic Response Analysis, Modal Analysis, ArtemiS Suite 15.7, SolidWorks
+Simulation: Ansys, COMSOL, Harmonic Response Analysis, Modal Analysis, ArtemiS Suite 15.7
 Design: SolidWorks, Fusion 360, CATIA, Solid Edge
-Testing & DAQ: SLDV, Shaker Testing, PU Probe, Microflown DAQ, SQuadriga, Vibration, Acoustics
-`;
-}
+Testing & DAQ: SLDV, Shaker Testing, PU Probe, Microflown DAQ, SQuadriga
+`;}
 
 function getCVText() {
-return `ANSH ATUL MISHRA — CURRICULUM VITAE
+return `ANSH ATUL MISHRA - CURRICULUM VITAE
 Atlanta, Georgia, 30309 | amishra360@gatech.edu | 602-388-9723
 LinkedIn: https://www.linkedin.com/in/ansh-mishra-92172418a/
 
 EDUCATION
-Georgia Institute of Technology — BSMS / PhD Mechanical Engineering | Jan 2022–Present
+Georgia Institute of Technology - BSMS / PhD Mechanical Engineering | Jan 2022-Present
 
 INDUSTRY EXPERIENCE
-Mechanical Engineering Intern | Sensata Technologies | May–Aug 2025
-Innovation Engineering & Flight Intern | Gulfstream Aerospace | Aug–Dec 2024
-Mechanical Design Intern | Space Technology & Aeronautical Rocketry | Jul–Aug 2022
+Mechanical Engineering Intern | Sensata Technologies | May-Aug 2025
+Innovation Engineering & Flight Intern | Gulfstream Aerospace | Aug-Dec 2024
+Mechanical Design Intern | Space Technology & Aeronautical Rocketry | Jul-Aug 2022
 
 RESEARCH EXPERIENCE
-Graduate Research Assistant | Smart Structures & Dynamical Systems Lab (ONR/Sandia) | Aug 2025–Present
-Undergraduate Research Assistant | Combustion Lab, Georgia Tech | Aug 2023–May 2025
-CEREAL Research Lab (VLRCOE) | Georgia Tech | Jan–Jun 2025
-Naval Underwater Acoustics Lab | Georgia Tech | Jan 2023–Jul 2025
-VIP — 2D Heterostructure Membranes | Georgia Tech | Jan–May 2024
-Purdue SURF Fellowship (Exemplary First-Time Researcher) | May–Aug 2023
-HRI Research | Arizona State University | Aug–Dec 2022
+Graduate Research Assistant | Smart Structures & Dynamical Systems Lab (ONR/Sandia) | Aug 2025-Present
+Undergraduate Research Assistant | Combustion Lab, Georgia Tech | Aug 2023-May 2025
+CEREAL Research Lab (VLRCOE) | Georgia Tech | Jan-Jun 2025
+Naval Underwater Acoustics Lab | Georgia Tech | Jan 2023-Jul 2025
+VIP - 2D Heterostructure Membranes | Georgia Tech | Jan-May 2024
+Purdue SURF Fellowship (Exemplary First-Time Researcher) | May-Aug 2023
+HRI Research | Arizona State University | Aug-Dec 2022
 
 PUBLICATIONS & PRESENTATIONS
-• Multi-DOF Piezoelectric Robotic Fish — SPIE SSNE 2026 Conference
-• Multi-DOF Piezoelectric Robotic Fish — SES Conference, Honorary Mention
-• Passive Acoustic ID Tags Lake Experiment — Technical Report & In-Progress Paper
-• Vapor Selective Membranes for Air Dehumidification — Poster & Technical Report
-• Origami-Inspired Locomotive Robot — Poster Presentation
-• Mishra & Mohite (2020) — Cold Gas Propulsion System Study. IRJET.
+- Multi-DOF Piezoelectric Robotic Fish - SPIE SSNE 2026 Conference
+- Multi-DOF Piezoelectric Robotic Fish - SES Conference, Honorary Mention
+- Passive Acoustic ID Tags Lake Experiment - Technical Report & In-Progress Paper
+- Vapor Selective Membranes for Air Dehumidification - Poster & Technical Report
+- Origami-Inspired Locomotive Robot - Poster Presentation
+- Mishra & Mohite (2020) - Cold Gas Propulsion System Study. IRJET.
 
 HONORS & AWARDS
-• Exemplary First-Time Researcher — Purdue SURF 2023
-• Faculty Honors — Georgia Institute of Technology
-• New American Scholar Award — Arizona State University
-• Kalam Ratna Award
-• ISRO Cyberspace Competition — All India Rank 51
-• National Science Olympiad — Bronze Medal
+- Exemplary First-Time Researcher - Purdue SURF 2023
+- Faculty Honors - Georgia Institute of Technology
+- New American Scholar Award - Arizona State University
+- Kalam Ratna Award
+- ISRO Cyberspace Competition - All India Rank 51
+- National Science Olympiad - Bronze Medal
 
 PROFESSIONAL MEMBERSHIPS
 Institute of Noise Control Engineering (INCE) | Acoustical Society of America (ASA)
 American Society of Mechanical Engineers (ASME) | AIAA
 
 CERTIFICATIONS
-Scanned Ele
+Scanned Electron Microscopy Imaging Training | Advanced Chamber Program | RCR | STK Level 1
+`;}
+</script>
+</body>
+</html>
